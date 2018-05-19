@@ -1,0 +1,12 @@
+#tests
+test
+coverage
+**/__snapshots__
+**/*.test.js
+
+#editor settings
+.idea
+.editorconfig
+
+#yarn
+yarn.lock

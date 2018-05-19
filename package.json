@@ -1,0 +1,26 @@
+{
+  "name": "create-nodew-exe",
+  "version": "1.0.0",
+  "author": "Andreas Opferkuch",
+  "bin": "bin/cli.js",
+  "main": "src/main.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s-h-a-d-o-w/create-nodew-exe.git"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "test": "jest",
+    "test:interactive": "node ./test/test_interactive.js"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3",
+    "test-console": "^1.1.0",
+    "winax": "^1.0.9"
+  },
+  "dependencies": {
+    "commander": "^2.15.1",
+    "yargs": "^11.0.0"
+  }
+}

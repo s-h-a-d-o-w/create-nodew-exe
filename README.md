@@ -1,6 +1,6 @@
 # create-nodew-exe
 
-Create an executable based on node.exe that will not show 
+Creates an executable based on node.exe that will not show 
 a terminal on launch.
 
 ### Usage

@@ -3,25 +3,21 @@
 Create an executable based on node.exe that will not show 
 a terminal on launch.
 
-###Usage
+### Usage
+
+Either through the CLI:
 ```
-# default: node . node.exe nodew.exe
-node . [<path to node.exe>] [<path to nodew.exe>]
+yarn global add create-nodew-exe
+create-nodew-exe <src> <dst>
 ```
 
-The modified executable will be created in the location from which
-you are calling this script. 
-
-### Testing the executable
-- Start -> Run...
-- <path to new .exe> test.js 
-
-Calculator should start with no terminal window being visible.
-
-### Debug output
-
-By using e.g.:
-
-`DEBUG=create-nodew-exe` 
-
-Although there really isn't much debug output...
+... or locally in your project:
+```
+yarn add create-nodew-exe
+```
+```
+require('create-nodew-exe')({
+	src: 'path/to/source',
+	dst: 'path/to/destination',
+});
+```

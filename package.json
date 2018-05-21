@@ -14,11 +14,9 @@
   "scripts": {
     "start": "node bin/cli.js",
     "test": "jest",
-    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test:interactive": "node ./test/test_interactive.js"
   },
   "devDependencies": {
-    "coveralls": "^3.0.1",
     "jest": "^22.4.3"
   },
   "dependencies": {

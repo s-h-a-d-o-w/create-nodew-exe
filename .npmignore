@@ -3,6 +3,7 @@ test
 coverage
 **/__snapshots__
 **/*.test.js
+jest.config.js
 
 #editor settings
 .idea

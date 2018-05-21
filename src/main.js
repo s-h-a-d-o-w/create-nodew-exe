@@ -6,21 +6,22 @@ module.exports = function(opts) {
 	const src = opts.src;
 	const dst = opts.dst;
 
-	// Open src as binary stream
-	const stream = new ActiveXObject('ADODB.Stream');
-	stream.Type = 1;
-	stream.Open();
+	let buffer;
+	let pos = 0; // current position within buffer
 
-	try { stream.LoadFromFile(src); }
+	try { buffer = fs.readFileSync(src) }
 	catch(err) { throw new Error(`Could not open file: ${src}`); }
 
 	// Some tiny helper functions
 	// ====================================================
 	const ok = () => true;
-	const readInt = (size) => hex.toInt(stream.Read(size));
-	const seek = (position) => {
-		stream.Position = position;
-		return true;
+	const seek = (newPos) => ((pos = newPos) || true); // Just keep || true in case we will ever seek to 0...
+	const readInt = (size) => {
+		let retval = hex.toInt(buffer.slice(pos, pos + size));
+		// Simulate stream behavior of the .coffee version with the current
+		// position moving along with every read
+		pos = pos + size;
+		return retval;
 	};
 	// ====================================================
 
@@ -29,7 +30,7 @@ module.exports = function(opts) {
 	if((0x5a4d === readInt(2))                && // MZ
 			seek(60)                          &&
 			(pe = readInt(4))                 &&
-			(pe < stream.size)                &&
+			(pe < buffer.byteLength)          &&
 			seek(pe)                          &&
 			(0x4550 === readInt(4))           && // PE
 			seek(pe + 20)                     &&
@@ -45,11 +46,9 @@ module.exports = function(opts) {
 		try { fs.unlinkSync(dst); } catch(e) { }
 
 		// Generate silent node exe
-		stream.Write(hex.dec('02')); // Replace this byte (value 3) by 2 to suppress the terminal.
-		stream.SaveToFile(dst);
+		buffer[pos] = 2; // Change this byte from 3 to 2 in order to suppress the terminal.
+		fs.writeSync(fs.openSync(dst, 'w'), buffer);
 	} else {
 		throw new Error(`Invalid EXE: ${src}`);
 	}
-
-	stream.Close();
 };

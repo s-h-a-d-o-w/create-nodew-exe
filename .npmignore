@@ -10,3 +10,6 @@ coverage
 
 #yarn
 yarn.lock
+
+#travis CI settings
+.travis.yml

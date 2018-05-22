@@ -5,9 +5,14 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Creates an executable based on node.exe that will not show 
-a terminal on launch.
+a terminal on launch (sometimes also called "silent mode").
+
+Credit for originally discovering how to do this goes to: [@ukoloff](https://github.com/ukoloff) 
+(who came up with it for his project [nvm$](https://github.com/ukoloff/nvms))
 
 ### Usage
+
+The conversion can be done on any platform, Windows is **not** required.
 
 Either through the CLI:
 ```

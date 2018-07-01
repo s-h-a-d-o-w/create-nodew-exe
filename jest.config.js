@@ -9,5 +9,5 @@ module.exports = {
 		'json',
 		'html'
 	],
-	//reporters: ['./reporter.js'],
+	testEnvironment: 'node',
 };

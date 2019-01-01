@@ -30,3 +30,12 @@ require('create-nodew-exe')({
 	dst: 'path/to/destination',
 });
 ```
+
+### Notes
+
+To see it in action, check out 
+[Spotify Ad Blocker](https://github.com/s-h-a-d-o-w/spotify-ad-blocker).
+
+Windows users may experience issues with wrong icons being 
+displayed due to due to caching. See notes on `ie4uinit` 
+[here](https://github.com/s-h-a-d-o-w/spotify-ad-blocker#building). 

@@ -47,7 +47,10 @@ module.exports = function(opts) {
 
 		// Generate silent node exe
 		buffer[pos] = 2; // Change this byte from 3 to 2 in order to suppress the terminal.
-		fs.writeSync(fs.openSync(dst, 'w'), buffer);
+
+		const file = fs.openSync(dst, 'w');
+		fs.writeSync(file, buffer);
+		fs.closeSync(file);
 	} else {
 		throw new Error(`Invalid EXE: ${src}`);
 	}

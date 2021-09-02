@@ -1,6 +1,6 @@
 {
   "name": "create-nodew-exe",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Creates an executable based on node.exe that will not show a terminal on launch.",
   "homepage": "https://github.com/s-h-a-d-o-w/create-nodew-exe",
   "author": "Andreas Opferkuch <ao@variations-of-shadow.com>",

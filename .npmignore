@@ -12,5 +12,5 @@ jest.config.js
 #yarn
 yarn.lock
 
-#travis CI settings
-.travis.yml
+#CI settings
+.github

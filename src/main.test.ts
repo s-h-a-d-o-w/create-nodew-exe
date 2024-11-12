@@ -1,9 +1,9 @@
 // The case of successful file conversion is covered in cli.test.js
-import { main } from "./main.js";
+import { createNodewExe } from "./main.js";
 
 test("input file doesn't exist", () => {
   try {
-    main({
+    createNodewExe({
       src: "doesntexist",
       dst: "doesntmatter",
     });
@@ -16,7 +16,7 @@ test("input file doesn't exist", () => {
 
 test("input file is invalid", () => {
   try {
-    main({
+    createNodewExe({
       src: "./package.json",
       dst: "doesntmatter",
     });

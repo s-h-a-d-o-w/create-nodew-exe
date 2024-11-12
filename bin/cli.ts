@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import { main } from "../src/main.js";
+import { createNodewExe } from "../src/main.js";
 
 const argv = yargs(hideBin(process.argv))
   .usage(
@@ -19,7 +19,7 @@ const argv = yargs(hideBin(process.argv))
   .parseSync();
 
 console.log("Generating: ", argv._[1]);
-main({
+createNodewExe({
   src: String(argv._[0]),
   dst: String(argv._[1]),
 });

@@ -2,7 +2,7 @@
 import fs from "fs";
 import { toInt } from "./hex.js";
 
-export function main({ src, dst }: { src: string; dst: string }) {
+export function createNodewExe({ src, dst }: { src: string; dst: string }) {
   let buffer: Buffer;
   let pos = 0; // current position within buffer
 

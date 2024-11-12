@@ -2,7 +2,7 @@ import screenshot from "screenshot-desktop";
 import { Canvas, loadImage } from "skia-canvas";
 import { mkdir, unlink, writeFile } from "node:fs/promises";
 import { basename } from "path";
-import { main } from "../src/main.js";
+import { createNodewExe } from "../src/main.js";
 import { execa } from "execa";
 import { execPath } from "node:process";
 
@@ -68,7 +68,7 @@ await mkdir("e2e-output");
 
 const regularExecutable = execPath;
 const silentExecutable = "bin\\testData\\nodew.exe";
-main({
+createNodewExe({
   src: regularExecutable,
   dst: silentExecutable,
 });

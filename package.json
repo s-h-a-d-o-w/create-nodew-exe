@@ -1,25 +1,56 @@
 {
   "name": "create-nodew-exe",
-  "version": "1.0.10",
+  "version": "2.0.0",
   "description": "Creates an executable based on node.exe that will not show a terminal on launch.",
   "homepage": "https://github.com/s-h-a-d-o-w/create-nodew-exe",
   "author": "Andreas Opferkuch <ao@variations-of-shadow.com>",
-  "bin": "bin/cli.js",
-  "main": "src/main.js",
+  "type": "module",
+  "bin": "dist/bin/cli.js",
+  "main": "dist/src/main.js",
   "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/s-h-a-d-o-w/create-nodew-exe.git"
   },
   "scripts": {
-    "start": "node bin/cli.js",
-    "test": "jest",
-    "test:interactive": "node ./test/test_interactive.js"
+    "build": "rimraf dist && tsc -p tsconfig.prod.json",
+    "e2e": "rimraf e2e-output && tsx e2e",
+    "lint": "eslint .",
+    "prepare": "husky",
+    "start": "tsx bin/cli.ts",
+    "test": "vitest"
   },
   "devDependencies": {
-    "jest": "24.8.0"
+    "@eslint/compat": "^1.2.1",
+    "@eslint/js": "^9.13.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.9.0",
+    "@types/screenshot-desktop": "^1.12.3",
+    "@types/yargs": "^17.0.33",
+    "concurrently": "^9.1.0",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "execa": "^9.5.1",
+    "globals": "^15.12.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "screenshot-desktop": "^1.15.0",
+    "skia-canvas": "^1.0.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.11.0",
+    "vitest": "^2.1.4"
   },
   "dependencies": {
-    "yargs": "13.2.4"
-  }
+    "yargs": "17.7.2"
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }

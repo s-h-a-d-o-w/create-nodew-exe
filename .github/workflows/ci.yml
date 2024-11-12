@@ -18,6 +18,10 @@ jobs:
         node-version: [18.x, 20.x, 22.x]
 
     steps:
+    - name: Install node canvas dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4

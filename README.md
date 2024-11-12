@@ -1,4 +1,3 @@
-![CI status](https://github.com/s-h-a-d-o-w/create-nodew-exe/actions/workflows/node.js.yml/badge.svg?branch=master)
 [![npm version](https://img.shields.io/npm/v/create-nodew-exe.svg)](https://www.npmjs.com/package/create-nodew-exe)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

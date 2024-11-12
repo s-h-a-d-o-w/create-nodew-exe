@@ -1,5 +1,5 @@
 import screenshot from "screenshot-desktop";
-import { createCanvas, loadImage } from "canvas";
+import { Canvas, loadImage } from "skia-canvas";
 import { mkdir, unlink, writeFile } from "node:fs/promises";
 import { basename } from "path";
 import { main } from "../src/main.js";
@@ -25,13 +25,13 @@ async function getDiff(
 
   const before = await loadImage(beforeBuffer);
   const after = await loadImage(afterBuffer);
-  const canvas = createCanvas(before.width, before.height);
+  const canvas = new Canvas(before.width, before.height);
   const ctx = canvas.getContext("2d");
   ctx.drawImage(before, 0, 0);
   ctx.globalCompositeOperation = "difference";
   ctx.drawImage(after, 0, 0);
 
-  await writeFile(`e2e-output/${name}-diff.png`, canvas.toBuffer());
+  await writeFile(`e2e-output/${name}-diff.png`, await canvas.toBuffer("png"));
 
   const diffData = ctx.getImageData(0, 0, before.width, before.height).data;
   let diff = 0;

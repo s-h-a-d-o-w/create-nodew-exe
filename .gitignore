@@ -1,3 +1,7 @@
+/dist
+/e2e-output
+nodew.exe
+
 # Logs
 logs
 *.log

@@ -30,6 +30,7 @@
     "@types/node": "^22.9.0",
     "@types/screenshot-desktop": "^1.12.3",
     "@types/yargs": "^17.0.33",
+    "concurrently": "^9.1.0",
     "eslint": "^9.13.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",

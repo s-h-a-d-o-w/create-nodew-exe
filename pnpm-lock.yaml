@@ -62,7 +62,7 @@ importers:
         version: 6.0.1
       screenshot-desktop:
         specifier: ^1.15.1
-        version: 1.15.1
+        version: 1.15.2
       skia-canvas:
         specifier: ^1.0.2
         version: 1.0.2
@@ -1355,8 +1355,8 @@ packages:
   safe-buffer@5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
 
-  screenshot-desktop@1.15.1:
-    resolution: {integrity: sha512-4j9bDZSFnkRqH53bAw5W+ZhdGKiTUcUDohO6NZjL6QSC/6AXbhUqJ9YXygjHrYcSOUD4IcLty6uQ1ES7PSsomg==}
+  screenshot-desktop@1.15.2:
+    resolution: {integrity: sha512-/uf8xhq3n/Ym7oOKT4XF1uLAYP9njABB9zMw7kkOaDVr8XOO1HBQsNJXT8lUvzD26Uj8IYkwQX46UMZG4Y/dIQ==}
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
@@ -2892,7 +2892,7 @@ snapshots:
 
   safe-buffer@5.2.1: {}
 
-  screenshot-desktop@1.15.1:
+  screenshot-desktop@1.15.2:
     dependencies:
       temp: 0.9.4
 

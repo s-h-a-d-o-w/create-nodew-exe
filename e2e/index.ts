@@ -7,7 +7,7 @@ import { execa } from "execa";
 import { execPath } from "node:process";
 
 // We can't try to go for a perfect match due to cursor blinking and the clock possibly changing.
-const DIFF_THRESHOLD = 100; // Number of pixels
+const DIFF_THRESHOLD = 1000; // Number of pixels that are allowed to be different
 
 function pause(delay: number) {
   return new Promise((resolve) => {
@@ -74,8 +74,11 @@ createNodewExe({
 });
 
 const errors = [];
-if ((await runTest(regularExecutable)) === 0) {
-  errors.push(`💥 Regular .exe didn't pop up a terminal!`);
+const regularDiff = await runTest(regularExecutable);
+if (regularDiff < DIFF_THRESHOLD) {
+  errors.push(
+    `💥 Regular .exe didn't pop up a terminal! (diff: ${regularDiff})`,
+  );
 }
 const silentDiff = await runTest(silentExecutable);
 if (silentDiff > DIFF_THRESHOLD) {

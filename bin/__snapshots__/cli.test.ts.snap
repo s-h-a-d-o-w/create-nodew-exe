@@ -6,7 +6,7 @@ exports[`--help > log 1`] = `
 [
   [
     "Converts node.exe into a silent executable (no terminal will pop up) by changing
- only one byte.
+only one byte.
 
 Usage: cli.js [options] <src> <dst>
 

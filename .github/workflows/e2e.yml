@@ -26,6 +26,7 @@ jobs:
         pnpm install --frozen-lockfile
         pnpm e2e
     - name: Upload Artifacts
+      if: always()
       uses: actions/upload-artifact@v7
       with:
         name: screenshots-v${{ matrix.node-version }}

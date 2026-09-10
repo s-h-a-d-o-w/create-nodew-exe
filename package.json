@@ -45,7 +45,7 @@
     "tsx": "^4.22.4",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.60.1",
-    "vitest": "^3.2.6"
+    "vitest": "^4.1.11"
   },
   "dependencies": {
     "yargs": "18.0.0"
